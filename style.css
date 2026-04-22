@@ -1,0 +1,483 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f8faf8;
+  color:#1e2a24;
+  overflow-x:hidden;
+}
+
+/* VARIABLES */
+:root{
+  --verde:#53c639;
+  --verde-oscuro:#2f8d22;
+  --naranja:#fe9c05;
+  --blanco:#ffffff;
+  --gris:#5f6b63;
+  --borde:#dfe9dc;
+  --sombra:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* GENERALES */
+.contenido{
+  width:90%;
+  max-width:1300px;
+  margin:auto;
+}
+
+.seccion{
+  padding:90px 0;
+}
+
+h1,h2,h3{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:1px;
+}
+
+p{
+  line-height:1.7;
+  color:var(--gris);
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:18px 5%;
+
+  background:rgba(255,255,255,.90);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 24px rgba(0,0,0,.05);
+}
+
+.menu{
+  display:flex;
+  gap:14px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#1e2a24;
+  font-weight:600;
+  padding:10px 18px;
+  border-radius:999px;
+  transition:.3s;
+}
+
+.menu a:hover{
+  background:#eef8eb;
+  color:var(--verde);
+}
+
+.hamburguesa{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* SECCION LOGO */
+.logo-seccion{
+  padding-top:100px;
+  padding-bottom:30px;
+  box-shadow: #1e2a24 0px 10px 30px -10px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:
+  linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+  url("../Proyecto2Vida/img/fondo1.webp") center/cover no-repeat;
+}
+
+.logo-seccion img{
+  width:auto;
+  max-width:900px;
+  max-height:500px;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.08));
+  border-radius:15px;
+}
+
+/* SECCION HERO CON OVERLAY */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+
+  background:
+  linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+  url("../Proyecto2Vida/img/fondo1.webp") center/cover no-repeat;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.hero-texto h1{
+  font-size:86px;
+  line-height:.95;
+  color:var(--verde);
+}
+
+.hero-texto h1 span{
+  color:var(--naranja);
+}
+
+.hero-texto h2{
+  font-size:42px;
+  margin-top:20px;
+  color:var(--verde);
+}
+
+.hero-texto p{
+  margin-top:18px;
+  max-width:550px;
+  font-size:19px;
+}
+
+.hero-img img{
+  width:100%;
+  max-width:540px;
+  display:block;
+  margin:auto;
+}
+
+/* SECCION HACEMOS */
+.hacemos{
+  background:
+  linear-gradient(rgba(248,250,248,.95),rgba(248,250,248,.95)),
+  url("../Proyecto2Vida/img/fondo2.webp") center/cover fixed;
+}
+
+.titulo{
+  text-align:center;
+  font-size:64px;
+  color:var(--verde);
+}
+
+.subtitulo{
+  font-size: 19px;
+  text-align:center;
+  max-width:750px;
+  margin:15px auto 40px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:28px;
+  border-radius:24px;
+  box-shadow:var(--sombra);
+  border:1px solid var(--borde);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card h3{
+  font-size:38px;
+  color:var(--naranja);
+  margin-bottom:14px;
+}
+
+.card ul{
+  list-style:none;
+}
+
+.card li{
+  padding:8px 0;
+  border-bottom:1px dashed #e6eee4;
+}
+
+/* GALERIA */
+.galeria{
+  margin-top:70px;
+}
+
+.galeria h3{
+  text-align:center;
+  font-size:48px;
+  color:var(--verde);
+  margin-bottom:20px;
+}
+
+.carrusel{
+  max-width:800px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:24px;
+  box-shadow:var(--sombra);
+}
+
+.grande{
+  display:flex;
+  transition:transform .5s ease;
+}
+
+.grande img{
+  width:100%;
+  min-width:100%;
+  height:480px;
+  object-fit:cover;
+}
+
+.controles{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+
+.controles button{
+  border:none;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:white;
+  box-shadow:var(--sombra);
+  font-size:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.controles button img{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+}
+
+.controles button:hover{
+  transform:scale(1.1);
+}
+
+/* SECCION UNITE */
+.unite{
+  background:
+  linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+  url("../Proyecto2Vida/img/fondo3.webp") center/cover no-repeat;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.texto-unite h2{
+  font-size:70px;
+  color:var(--verde);
+}
+
+.texto-unite p{
+  font-size: 18px;
+  margin-top:18px;
+  max-width:500px;
+}
+
+.texto-unite img{
+  width:100%;
+  max-width:420px;
+  margin-top:25px;
+}
+
+/* FORMULARIO */
+.caja-form{
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(12px);
+  padding:35px;
+  border-radius:28px;
+  box-shadow:var(--sombra);
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+input,
+select,
+textarea{
+  padding:14px;
+  border-radius:16px;
+  border:1px solid var(--borde);
+  font-family:'Inter',sans-serif;
+}
+
+textarea{
+  resize:none;
+}
+
+form button{
+  margin-top:10px;
+  border:none;
+  padding:15px;
+  border-radius:16px;
+  background:var(--verde);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+
+form button:hover{
+  background:var(--verde-oscuro);
+}
+
+/* FOOTER */
+.footer{
+  margin-top:70px;
+  padding-top:30px;
+  border-top:1px solid #dde7d9;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:14px;
+}
+
+.redes{
+  display:flex;
+  gap:16px;
+}
+
+.redes a{
+  text-decoration:none;
+  color:var(--verde);
+  font-weight:700;
+}
+
+/* RESPONSIVE 900px */
+@media(max-width:900px){
+
+.logo-seccion img{
+  width: 400px;
+  height: 375px;
+  max-width:auto;
+  max-height:auto;
+}
+
+.hero-grid,
+.form-grid{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.hero-texto p,
+.texto-unite p{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.hero-texto h1{
+  font-size:64px;
+}
+
+.texto-unite h2{
+  font-size:54px;
+}
+
+.hero-img{
+  order:-1;
+}
+
+}
+
+
+/* RESPONSIVE 768px */
+@media(max-width:768px){
+
+.logo-seccion{
+  padding-top:72px;
+  padding-bottom:10px;
+}
+
+.logo-seccion img{
+  width: 250px;
+  height: 225px;
+  max-width:auto;
+  max-height:auto;
+}
+
+.hero-texto h1{
+  font-size:52px;
+}
+
+.hero-img img,
+.grande img,
+.texto-unite img{
+  width:100%;
+  height:430px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.menu{
+  position:absolute;
+  top:72px;
+  right:5%;
+  background:white;
+  padding:18px;
+  border-radius:20px;
+  box-shadow:var(--sombra);
+  display:none;
+  flex-direction:column;
+  gap:12px;
+}
+
+.menu.activo{
+  display:flex;
+}
+
+.hamburguesa{
+  display:block;
+}
+
+.titulo{
+  font-size:50px;
+}
+
+.grande img{
+  height:300px;
+}
+
+.footer{
+  text-align:center;
+}
+
+.redes{
+  justify-content:center;
+}
+
+}
