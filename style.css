@@ -124,7 +124,7 @@ p{
 
   background:
   linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
-  url("../Proyecto2Vida/img/fondo1.webp") center/cover no-repeat;
+  url("img/fondo1.webp") center/cover no-repeat;
 }
 
 .hero-grid{
@@ -167,7 +167,7 @@ p{
 .hacemos{
   background:
   linear-gradient(rgba(248,250,248,.95),rgba(248,250,248,.95)),
-  url("../Proyecto2Vida/img/fondo2.webp") center/cover fixed;
+  url("img/fondo2.webp") center/cover fixed;
 }
 
 .titulo{
@@ -282,7 +282,7 @@ p{
 .unite{
   background:
   linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
-  url("../Proyecto2Vida/img/fondo3.webp") center/cover no-repeat;
+  url("img/fondo3.webp") center/cover no-repeat;
 }
 
 .form-grid{
