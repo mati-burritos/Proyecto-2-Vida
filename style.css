@@ -83,6 +83,8 @@ p{
 .menu a:hover{
   background:#eef8eb;
   color:var(--verde);
+  box-shadow:0 0 14px rgba(83,198,57,.18);
+  transform:translateY(-2px);
 }
 
 .hamburguesa{
@@ -95,7 +97,6 @@ p{
 .logo-seccion{
   padding-top:100px;
   padding-bottom:30px;
-  box-shadow: #1e2a24 0px 10px 30px -10px;
 
   display:flex;
   justify-content:center;
@@ -104,19 +105,37 @@ p{
   background:
   linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
   url("../Proyecto2Vida/img/fondo1.webp") center/cover no-repeat;
+
+  box-shadow:#1e2a24 0 10px 30px -10px;
 }
 
 .logo-seccion img{
-  width:auto;
-  max-width:900px;
-  max-height:500px;
+  width:420px;
+  max-width:90%;
   height:auto;
   display:block;
-  filter:drop-shadow(0 8px 16px rgba(0,0,0,.08));
   border-radius:15px;
+
+  filter:drop-shadow(0 10px 25px rgba(0,0,0,.10));
+  transition:.35s ease;
+
+  animation:flotar 4s ease-in-out infinite;
 }
 
-/* SECCION HERO CON OVERLAY */
+.logo-seccion img:hover{
+  transform:scale(1.03) translateY(-4px);
+}
+
+@keyframes flotar{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+/* SECCION HERO */
 .hero{
   min-height:100vh;
   display:flex;
@@ -177,7 +196,7 @@ p{
 }
 
 .subtitulo{
-  font-size: 19px;
+  font-size:19px;
   text-align:center;
   max-width:750px;
   margin:15px auto 40px;
@@ -271,7 +290,7 @@ p{
 .controles button img{
   width:50px;
   height:50px;
-  border-radius: 50%;
+  border-radius:50%;
 }
 
 .controles button:hover{
@@ -298,7 +317,7 @@ p{
 }
 
 .texto-unite p{
-  font-size: 18px;
+  font-size:18px;
   margin-top:18px;
   max-width:500px;
 }
@@ -382,10 +401,7 @@ form button:hover{
 @media(max-width:900px){
 
 .logo-seccion img{
-  width: 400px;
-  height: 375px;
-  max-width:auto;
-  max-height:auto;
+  width:340px;
 }
 
 .hero-grid,
@@ -414,28 +430,75 @@ form button:hover{
 
 }
 
-
 /* RESPONSIVE 768px */
 @media(max-width:768px){
 
+.navbar{
+  justify-content:space-between;
+  padding:14px 5%;
+}
+
+.hamburguesa{
+  display:block;
+  font-size:30px;
+  color:var(--naranja);
+  cursor:pointer;
+  z-index:1001;
+}
+
+.menu{
+  position:absolute;
+  top:70px;
+  left:5%;
+  right:5%;
+
+  background:white;
+  border-radius:18px;
+  box-shadow:var(--sombra);
+
+  padding:18px;
+
+  display:none;
+  flex-direction:column;
+  gap:12px;
+
+  text-align:center;
+}
+
+.menu.activo{
+  display:flex;
+}
+
+.menu a{
+  padding:12px;
+  border-radius:12px;
+}
+
+.menu a:hover{
+  background:#eef8eb;
+  color:var(--verde);
+  box-shadow:0 0 12px rgba(83,198,57,.22);
+}
+
 .logo-seccion{
-  padding-top:72px;
-  padding-bottom:10px;
+  padding-top:85px;
+  padding-bottom:20px;
 }
 
 .logo-seccion img{
-  width: 250px;
-  height: 225px;
-  max-width:auto;
-  max-height:auto;
+  width:240px;
+  max-width:78%;
 }
 
 .hero-texto h1{
   font-size:52px;
 }
 
+.hero-texto p{
+  padding-bottom:20px;
+}
+
 .hero-img img,
-.grande img,
 .texto-unite img{
   width:100%;
   height:430px;
@@ -443,33 +506,15 @@ form button:hover{
   border-radius:20px;
 }
 
-.menu{
-  position:absolute;
-  top:72px;
-  right:5%;
-  background:white;
-  padding:18px;
-  border-radius:20px;
-  box-shadow:var(--sombra);
-  display:none;
-  flex-direction:column;
-  gap:12px;
-}
-
-.menu.activo{
-  display:flex;
-}
-
-.hamburguesa{
-  display:block;
-}
-
-.titulo{
-  font-size:50px;
-}
-
 .grande img{
-  height:300px;
+  width:100%;
+  height:520px;
+  object-fit:cover;
+}
+
+.card{
+  min-height:340px;
+  padding:30px;
 }
 
 .footer{
