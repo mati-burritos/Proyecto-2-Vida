@@ -56,6 +56,35 @@ btnPrev.addEventListener('click', () => {
   actualizarCarrusel();
 });
 
+let startX = 0;
+let endX = 0;
+
+grande.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+grande.addEventListener('touchmove', (e) => {
+  endX = e.touches[0].clientX;
+});
+
+grande.addEventListener('touchend', () => {
+  const diff = startX - endX;
+
+  if (Math.abs(diff) < 50) return;
+
+  if (diff > 0) {
+    // swipe izquierda → siguiente
+    index++;
+    if (index >= total) index = 0;
+  } else {
+    // swipe derecha → anterior
+    index--;
+    if (index < 0) index = total - 1;
+  }
+
+  actualizarCarrusel();
+});
+
 /* ANIMACION AL SCROLL */
 
 const elementos = document.querySelectorAll('.card, .hero-texto, .hero-img, .texto-unite, .caja-form');
