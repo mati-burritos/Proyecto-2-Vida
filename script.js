@@ -29,32 +29,40 @@ const btnNext = document.querySelector('.next');
 let index = 0;
 const total = imagenes.length;
 
-/* mover carrusel */
-function actualizarCarrusel() {
+/* MOVER CARRUSEL */
+function actualizarCarrusel(sinAnimacion = false) {
+  if (sinAnimacion) {
+    grande.style.transition = 'none';
+  } else {
+    grande.style.transition = 'transform 0.4s ease';
+  }
+
   grande.style.transform = `translateX(-${index * 100}%)`;
 }
 
-/* siguiente */
+/* SIGUIENTE */
 btnNext.addEventListener('click', () => {
   index++;
 
   if (index >= total) {
     index = 0;
+    actualizarCarrusel(true); // sin animación
+  } else {
+    actualizarCarrusel();
   }
+ });
 
-  actualizarCarrusel();
-});
-
-/* anterior */
+/* ANTERIOR */
 btnPrev.addEventListener('click', () => {
   index--;
 
   if (index < 0) {
     index = total - 1;
+    actualizarCarrusel(true);
+  } else {
+    actualizarCarrusel();
   }
-
-  actualizarCarrusel();
-});
+ });
 
 let startX = 0;
 let endX = 0;
@@ -73,16 +81,25 @@ grande.addEventListener('touchend', () => {
   if (Math.abs(diff) < 50) return;
 
   if (diff > 0) {
-    // swipe izquierda → siguiente
-    index++;
-    if (index >= total) index = 0;
+  index++;
+
+  if (index >= total) {
+    index = 0;
+    actualizarCarrusel(true);
   } else {
-    // swipe derecha → anterior
-    index--;
-    if (index < 0) index = total - 1;
+    actualizarCarrusel();
   }
 
-  actualizarCarrusel();
+} else {
+  index--;
+
+  if (index < 0) {
+    index = total - 1;
+    actualizarCarrusel(true);
+  } else {
+    actualizarCarrusel();
+  }
+}
 });
 
 /* ANIMACION AL SCROLL */
