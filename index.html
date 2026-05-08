@@ -25,12 +25,15 @@
 <nav class="menu">
 <a href="#inicio">Inicio</a>
 <a href="#hacemos">Qué hacemos</a>
+<a href="#galeria">Galería</a>
 <a href="#unite">Unite</a>
 </nav>
 
 <div class="hamburguesa">☰</div>
 
 </header>
+
+<main>
 
 <section id="logo" class="logo-seccion">
     
@@ -114,9 +117,9 @@ Transformamos ideas en acciones concretas para mejorar la vida universitaria.
 </div>
 
 <!-- CARRUSEL -->
-<div class="galeria">
+<div id="galeria" class="galeria">
 
-<h3>Galería</h3>
+<h2>Galería</h2>
 
 <div class="carrusel">
 
@@ -171,19 +174,24 @@ También podés escribirnos completando el formulario.
 
 <form>
 
-<input type="text" placeholder="Nombre">
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre" placeholder="Matias">
 
-<input type="email" placeholder="Email">
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="correoejemplo@gmail.com">
 
-<input type="tel" placeholder="Teléfono">
+<label for="telefono">Teléfono</label>
+<input type="tel" id="telefono" placeholder="1234567890">
 
-<select>
+<label for="motivo">Motivo</label>
+<select id="motivo">
 <option>Consulta</option>
 <option>Voluntariado</option>
 <option>Quiero sumarme</option>
 </select>
 
-<textarea rows="5" placeholder="Mensaje"></textarea>
+<label for="mensaje">Mensaje</label>
+<textarea rows="5" id="mensaje" placeholder="Dejá tu mensaje"></textarea>
 
 <button type="submit">Enviar</button>
 
@@ -191,7 +199,7 @@ También podés escribirnos completando el formulario.
 
 </div>
 
-</div>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">

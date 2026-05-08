@@ -241,11 +241,11 @@ p{
   margin-top:70px;
 }
 
-.galeria h3{
+.galeria h2{
   text-align:center;
-  font-size:48px;
+  font-size:64px;
   color:var(--verde);
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 .carrusel{
@@ -273,7 +273,7 @@ p{
 }
 
 .controles{
-  margin-top:20px;
+  margin-top:30px;
   display:flex;
   justify-content:center;
   gap:14px;
@@ -347,6 +347,12 @@ form{
   gap:14px;
 }
 
+label{
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color:var(--verde);
+}
+
 input,
 select,
 textarea{
@@ -378,7 +384,7 @@ form button:hover{
 
 /* FOOTER */
 .footer{
-  margin-top:70px;
+  margin: 70px auto 40px;
   padding-top:30px;
   border-top:1px solid #dde7d9;
 
@@ -430,6 +436,15 @@ form button:hover{
 
 .hero-img{
   order:-1;
+}
+
+form label{
+  text-align:left;
+  margin-bottom: 3px;
+}
+
+form input{
+  margin-bottom: 10px;
 }
 
 }
@@ -519,6 +534,10 @@ form button:hover{
 .card{
   min-height:340px;
   padding:30px;
+}
+
+form label{
+  text-align:left;
 }
 
 .footer{
